@@ -420,7 +420,7 @@ export default function Home() {
             <Button size="lg" className="text-base md:text-lg px-8 md:px-10 py-4 md:py-5 shadow-xl w-full sm:w-auto">
               Book Your Tour
             </Button>
-            <Button variant="secondary" size="lg" className="text-base md:text-lg px-8 md:px-10 py-4 md:py-5 border-2 border-executive-cream text-executive-cream hover:bg-executive-cream hover:text-executive-navy shadow-xl w-full sm:w-auto">
+            <Button variant="light" size="lg" className="text-base md:text-lg px-8 md:px-10 py-4 md:py-5 shadow-xl w-full sm:w-auto">
               Contact Us
             </Button>
           </div>
