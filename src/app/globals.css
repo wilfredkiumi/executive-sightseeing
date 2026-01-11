@@ -23,7 +23,7 @@
   --ring: #d4af37;
   
   /* Executive Typography */
-  --font-heading: var(--font-playfair);
+  --font-heading: var(--font-montserrat);
   --font-body: var(--font-inter);
   
   /* Spacing & Layout */

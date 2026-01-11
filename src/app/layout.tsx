@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -8,12 +8,14 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
 });
 
-const playfairDisplay = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-montserrat',
   display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -42,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${playfairDisplay.variable}`}>
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${montserrat.variable}`}>
       <body className="min-h-screen bg-background font-body text-foreground antialiased">
         <div className="relative flex min-h-screen flex-col">
           <Header />
