@@ -44,7 +44,7 @@ export function Footer() {
             <p className="body-regular text-sm sm:text-base mb-5 md:mb-6 text-executive-cream/80">
               Subscribe to receive special promotions, travel tips, and insider access to London's finest experiences
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-2xl mx-auto justify-center items-center">
+            <form className="flex flex-col gap-3 w-full sm:w-auto sm:flex-row sm:gap-4 sm:max-w-2xl sm:mx-auto sm:justify-center sm:items-center">
               <input
                 type="email"
                 placeholder="Your email address"
