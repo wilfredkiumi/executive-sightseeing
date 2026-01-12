@@ -187,7 +187,7 @@ export default function FleetPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {standards.map((standard) => (
-              <Card key={standard.title} className="text-center group hover:shadow-xl transition-all duration-300">
+              <Card key={standard.title} dark className="text-center group hover:shadow-xl transition-all duration-300 bg-executive-navy border-executive-navy">
                 <CardHeader>
                   <div className="w-14 h-14 sm:w-16 sm:h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-executive-navy">
                     {standard.icon}
@@ -215,7 +215,7 @@ export default function FleetPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
             {fleet.map((vehicle) => (
-              <Card key={vehicle.name} variant="elevated" className="overflow-hidden flex flex-col">
+              <Card key={vehicle.name} dark={false} variant="elevated" className="overflow-hidden flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 w-full">
                   <Image
                     src={vehicle.image}

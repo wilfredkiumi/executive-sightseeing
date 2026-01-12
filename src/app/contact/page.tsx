@@ -116,7 +116,7 @@ export default function ContactPage() {
         <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {contactMethods.map((method) => (
-              <Card key={method.title} className="text-center group hover:shadow-xl transition-all duration-300">
+              <Card key={method.title} dark className="text-center group hover:shadow-xl transition-all duration-300 bg-executive-navy border-executive-navy">
                 <CardHeader>
                   <div className="w-14 h-14 sm:w-16 sm:h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-executive-navy">
                     {method.icon}
@@ -127,8 +127,8 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     {method.details.map((detail, index) => (
                       <div key={index} className="text-sm sm:text-base">
-                        {detail.label && <div className="text-xs text-executive-charcoal/60 font-semibold">{detail.label}</div>}
-                        <div className="text-executive-charcoal">{detail.value}</div>
+                        {detail.label && <div className="text-xs text-white/60 font-semibold">{detail.label}</div>}
+                        <div className="text-white/90">{detail.value}</div>
                       </div>
                     ))}
                   </div>
@@ -314,7 +314,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <Card variant="elevated">
+              <Card dark={false} variant="elevated">
                 <CardContent className="pt-6">
                   <h4 className="font-semibold text-executive-navy mb-4 text-base sm:text-lg">Quick Response Guarantee</h4>
                   <ul className="space-y-3 text-sm sm:text-base text-executive-charcoal">

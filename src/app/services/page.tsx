@@ -150,7 +150,7 @@ export default function ServicesPage() {
         <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
             {services.map((service) => (
-              <Card key={service.id} variant="elevated" className="overflow-hidden flex flex-col">
+              <Card key={service.id} dark={false} variant="elevated" className="overflow-hidden flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 w-full">
                   <Image
                     src={service.image}
@@ -215,7 +215,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <Card className="text-center">
+            <Card dark className="text-center bg-executive-navy border-executive-navy">
               <CardHeader>
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-7 h-7 sm:w-8 sm:h-8 text-executive-navy" fill="currentColor" viewBox="0 0 20 20">
@@ -231,7 +231,7 @@ export default function ServicesPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card dark className="text-center bg-executive-navy border-executive-navy">
               <CardHeader>
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-7 h-7 sm:w-8 sm:h-8 text-executive-navy" fill="currentColor" viewBox="0 0 20 20">
@@ -247,7 +247,7 @@ export default function ServicesPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card dark className="text-center bg-executive-navy border-executive-navy">
               <CardHeader>
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-7 h-7 sm:w-8 sm:h-8 text-executive-navy" fill="currentColor" viewBox="0 0 20 20">

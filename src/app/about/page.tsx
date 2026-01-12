@@ -144,7 +144,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value) => (
-              <Card key={value.title} className="text-center group hover:shadow-xl transition-all duration-300">
+              <Card key={value.title} dark className="text-center group hover:shadow-xl transition-all duration-300 bg-executive-navy border-executive-navy">
                 <CardHeader>
                   <div className="w-14 h-14 sm:w-16 sm:h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-executive-navy">
                     {value.icon}
@@ -152,7 +152,7 @@ export default function AboutPage() {
                   <CardTitle className="text-lg sm:text-xl">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm sm:text-base text-executive-charcoal/80">{value.description}</p>
+                  <p className="text-sm sm:text-base text-white/90">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -212,7 +212,7 @@ export default function AboutPage() {
                   <CardTitle className="text-lg sm:text-xl">{member.role}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm sm:text-base text-executive-charcoal/80">{member.description}</p>
+                  <p className="text-sm sm:text-base text-white/90">{member.description}</p>
                 </CardContent>
               </Card>
             ))}

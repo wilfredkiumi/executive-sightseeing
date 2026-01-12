@@ -134,7 +134,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <Card className="text-center group">
+            <Card dark className="text-center group bg-executive-navy border-executive-navy">
               <CardHeader>
                 <div className="w-16 h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <svg className="w-8 h-8 text-executive-navy" fill="currentColor" viewBox="0 0 20 20">
@@ -150,7 +150,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="text-center group">
+            <Card dark className="text-center group bg-executive-navy border-executive-navy">
               <CardHeader>
                 <div className="w-16 h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <svg className="w-8 h-8 text-executive-navy" fill="currentColor" viewBox="0 0 20 20">
@@ -166,7 +166,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="text-center group">
+            <Card dark className="text-center group bg-executive-navy border-executive-navy">
               <CardHeader>
                 <div className="w-16 h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <svg className="w-8 h-8 text-executive-navy" fill="currentColor" viewBox="0 0 20 20">
@@ -183,7 +183,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="text-center group">
+            <Card dark className="text-center group bg-executive-navy border-executive-navy">
               <CardHeader>
                 <div className="w-16 h-16 bg-executive-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <svg className="w-8 h-8 text-executive-navy" fill="currentColor" viewBox="0 0 20 20">
@@ -217,14 +217,14 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            <Card variant="elevated" className="overflow-hidden">
+            <Card dark variant="elevated" className="overflow-hidden bg-executive-navy border-executive-navy">
               <div className="h-2 bg-gradient-to-r from-executive-gold to-[#b8941f]"></div>
               <CardHeader className="pb-4">
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-3 mb-4">
                   <CardTitle className="text-lg sm:text-xl md:text-2xl">The Classic London Executive Tour</CardTitle>
                   <div className="text-left sm:text-right">
                     <div className="text-2xl sm:text-3xl font-bold text-executive-gold">£899</div>
-                    <div className="text-xs text-executive-charcoal/60">per person</div>
+                    <div className="text-xs text-white/60">per person</div>
                   </div>
                 </div>
                 <CardDescription className="text-sm sm:text-base">
@@ -237,45 +237,45 @@ export default function Home() {
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">8 hours total duration (8:00 am – 4:00 pm)</span>
+                    <span className="text-sm text-white/90">8 hours total duration (8:00 am – 4:00 pm)</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Buckingham Palace & Westminster</span>
+                    <span className="text-sm text-white/90">Buckingham Palace & Westminster</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Tower Bridge & Thames Riverside</span>
+                    <span className="text-sm text-white/90">Tower Bridge & Thames Riverside</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Canary Wharf Financial District</span>
+                    <span className="text-sm text-white/90">Canary Wharf Financial District</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Professional driver and luxury vehicle</span>
+                    <span className="text-sm text-white/90">Professional driver and luxury vehicle</span>
                   </div>
                 </div>
                 <Button className="w-full mt-6" size="lg">Book This Tour</Button>
               </CardContent>
             </Card>
 
-            <Card variant="elevated" className="overflow-hidden">
+            <Card dark variant="elevated" className="overflow-hidden bg-executive-navy border-executive-navy">
               <div className="h-2 bg-gradient-to-r from-executive-gold to-[#b8941f]"></div>
               <CardHeader className="pb-4">
                 <div className="flex flex-col sm:flex-row justify-between items-start gap-3 mb-4">
                   <CardTitle className="text-lg sm:text-xl md:text-2xl">Executive Trips Outside London</CardTitle>
                   <div className="text-left sm:text-right">
                     <div className="text-2xl sm:text-3xl font-bold text-executive-gold">£899</div>
-                    <div className="text-xs text-executive-charcoal/60">+ £2/mile</div>
+                    <div className="text-xs text-white/60">+ £2/mile</div>
                   </div>
                 </div>
                 <CardDescription className="text-sm sm:text-base">
@@ -288,31 +288,31 @@ export default function Home() {
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Fully customized itineraries</span>
+                    <span className="text-sm text-white/90">Fully customized itineraries</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Professional chauffeur service</span>
+                    <span className="text-sm text-white/90">Professional chauffeur service</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Flexible scheduling options</span>
+                    <span className="text-sm text-white/90">Flexible scheduling options</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Premium vehicle selection</span>
+                    <span className="text-sm text-white/90">Premium vehicle selection</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-executive-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm text-executive-charcoal">Concierge-level service</span>
+                    <span className="text-sm text-white/90">Concierge-level service</span>
                   </div>
                 </div>
                 <Button className="w-full mt-6" size="lg">Request Custom Quote</Button>
@@ -343,7 +343,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <Card className="glass-effect border-executive-gold/30">
+            <Card dark className="bg-executive-navy backdrop-blur-sm border-executive-gold/30 shadow-lg">
               <CardContent className="pt-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -352,17 +352,17 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-executive-charcoal mb-4 italic">
+                <p className="text-white/90 mb-4 italic">
                   "Exceptional service from start to finish. The attention to detail and professionalism exceeded all expectations."
                 </p>
                 <div className="border-t border-executive-gold/20 pt-4">
-                  <p className="font-semibold text-executive-navy">Sarah Johnson</p>
-                  <p className="text-sm text-executive-charcoal/60">CEO, Tech Innovations Ltd</p>
+                  <p className="font-semibold text-white">Sarah Johnson</p>
+                  <p className="text-sm text-white/70">CEO, Tech Innovations Ltd</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="glass-effect border-executive-gold/30">
+            <Card dark className="bg-executive-navy backdrop-blur-sm border-executive-gold/30 shadow-lg">
               <CardContent className="pt-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -371,17 +371,17 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-executive-charcoal mb-4 italic">
+                <p className="text-white/90 mb-4 italic">
                   "The perfect blend of luxury and efficiency. Made our London visit truly memorable and hassle-free."
                 </p>
                 <div className="border-t border-executive-gold/20 pt-4">
-                  <p className="font-semibold text-executive-navy">Michael Chen</p>
-                  <p className="text-sm text-executive-charcoal/60">Managing Director, Global Finance Corp</p>
+                  <p className="font-semibold text-white">Michael Chen</p>
+                  <p className="text-sm text-white/70">Managing Director, Global Finance Corp</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="glass-effect border-executive-gold/30">
+            <Card dark className="bg-executive-navy backdrop-blur-sm border-executive-gold/30 shadow-lg">
               <CardContent className="pt-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -390,12 +390,12 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-executive-charcoal mb-4 italic">
+                <p className="text-white/90 mb-4 italic">
                   "Outstanding professionalism and knowledge. Their service truly reflects the executive experience they promise."
                 </p>
                 <div className="border-t border-executive-gold/20 pt-4">
-                  <p className="font-semibold text-executive-navy">Emma Williams</p>
-                  <p className="text-sm text-executive-charcoal/60">VP Operations, International Ventures</p>
+                  <p className="font-semibold text-white">Emma Williams</p>
+                  <p className="text-sm text-white/70">VP Operations, International Ventures</p>
                 </div>
               </CardContent>
             </Card>
