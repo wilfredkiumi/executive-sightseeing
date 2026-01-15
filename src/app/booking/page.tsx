@@ -1,0 +1,144 @@
+'use client';
+
+import React, { useState } from 'react';
+import { BookingCalendar, DateRange } from '@/components/booking/BookingCalendar';
+import { ServiceSelector, services } from '@/components/booking/ServiceSelector';
+import { PassengerForm } from '@/components/booking/PassengerForm';
+import { BookingSummary } from '@/components/booking/BookingSummary';
+import { Button } from '@/components/ui/Button';
+
+export default function BookingPage() {
+    const [date, setDate] = useState<DateRange | undefined>(undefined);
+    const [selectedServiceId, setSelectedServiceId] = useState<string | undefined>();
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        passengers: 1,
+        specialRequests: '',
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const selectedService = services.find((s) => s.id === selectedServiceId);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!date?.from || !selectedServiceId) {
+            alert('Please select a service and at least a start date.');
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        // Simulate API call
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+    };
+
+    if (isSubmitted) {
+        return (
+            <div className="min-h-screen bg-gray-50 pt-32 pb-20 px-4 md:px-8">
+                <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-executive-gold">
+                    <h1 className="heading-primary text-3xl md:text-4xl text-executive-navy mb-4">Booking Request Received</h1>
+                    <p className="text-gray-600 text-lg mb-8">
+                        Thank you, {formData.name}. We have received your request for the <strong className="text-executive-navy">{selectedService?.name}</strong>.
+                    </p>
+                    <p className="text-gray-600 mb-8">
+                        Our concierge team will review your details and contact you shortly at {formData.email} to confirm availability and finalize arrangements.
+                    </p>
+                    <Button onClick={() => setIsSubmitted(false)}>Make Another Booking</Button>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12 animate-fade-in-up">
+                    <p className="text-executive-gold font-medium uppercase tracking-widest mb-2">Reserve Your Experience</p>
+                    <h1 className="heading-primary text-3xl md:text-5xl text-executive-navy">Book Your Executive Tour</h1>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                    {/* Left Column: Form Steps */}
+                    <div className="lg:col-span-2 space-y-8 animate-fade-in-up animation-delay-100">
+
+                        {/* Step 1: Service Selection */}
+                        <section>
+                            <h2 className="heading-secondary text-2xl text-executive-navy mb-4 flex items-center">
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-executive-navy text-executive-cream text-sm font-bold mr-3">1</span>
+                                Select Your Service
+                            </h2>
+                            <ServiceSelector
+                                selectedServiceId={selectedServiceId}
+                                onSelect={setSelectedServiceId}
+                            />
+                        </section>
+
+                        {/* Step 2: Date Selection */}
+                        <section>
+                            <h2 className="heading-secondary text-2xl text-executive-navy mb-4 flex items-center">
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-executive-navy text-executive-cream text-sm font-bold mr-3">2</span>
+                                Select Dates
+                            </h2>
+                            <div className="flex justify-start">
+                                <BookingCalendar
+                                    mode="range"
+                                    selected={date}
+                                    onSelect={setDate}
+                                    disabled={(date) => date < new Date()}
+                                />
+                            </div>
+                        </section>
+
+                        {/* Step 3: Passenger Details */}
+                        <section>
+                            <h2 className="heading-secondary text-2xl text-executive-navy mb-4 flex items-center">
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-executive-navy text-executive-cream text-sm font-bold mr-3">3</span>
+                                Your Details
+                            </h2>
+                            <PassengerForm
+                                formData={formData}
+                                onChange={handleInputChange}
+                            />
+                        </section>
+                    </div>
+
+                    {/* Right Column: Summary & Submit */}
+                    <div className="lg:col-span-1 animate-fade-in-up animation-delay-200 sticky top-24 h-fit">
+                        <BookingSummary
+                            selectedService={selectedService}
+                            date={date}
+                            passengers={Number(formData.passengers)}
+                        />
+
+                        <Button
+                            onClick={handleSubmit}
+                            className="w-full mt-6 text-lg py-6 shadow-xl"
+                            size="lg"
+                            disabled={!date?.from || !selectedServiceId || !formData.name || !formData.email || !formData.phone}
+                            loading={isSubmitting}
+                        >
+                            Request Booking
+                        </Button>
+                        <p className="text-xs text-gray-500 text-center mt-4">
+                            Secure SSL Encrypted Transaction. No payment required at this stage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
