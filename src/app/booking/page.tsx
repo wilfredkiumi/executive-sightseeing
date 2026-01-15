@@ -6,6 +6,8 @@ import { ServiceSelector, services } from '@/components/booking/ServiceSelector'
 import { PassengerForm } from '@/components/booking/PassengerForm';
 import { BookingSummary } from '@/components/booking/BookingSummary';
 import { Button } from '@/components/ui/Button';
+import { createClient } from '@/lib/supabase/client';
+import { differenceInCalendarDays } from 'date-fns';
 
 export default function BookingPage() {
     const [date, setDate] = useState<DateRange | undefined>(undefined);
@@ -39,11 +41,45 @@ export default function BookingPage() {
 
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        try {
+            // Calculate Total Price (Logic duplicated from BookingSummary - should be refactored to utility in future)
+            const basePrice = selectedService ? selectedService.price : 0;
+            let duration = 1;
+            if (date.from && date.to) {
+                duration = differenceInCalendarDays(date.to, date.from) + 1;
+            }
+            const extraPassengerCost = Number(formData.passengers) > 2 ? (Number(formData.passengers) - 2) * 50 : 0;
+            const dailyTotal = basePrice + extraPassengerCost;
+            const totalPrice = dailyTotal * duration;
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
+            const supabase = createClient();
+            const { error } = await supabase.from('bookings').insert({
+                service_id: selectedServiceId,
+                service_name: selectedService?.name,
+                start_date: date.from.toISOString(),
+                end_date: date.to ? date.to.toISOString() : date.from.toISOString(),
+                customer_name: formData.name,
+                customer_email: formData.email,
+                customer_phone: formData.phone,
+                passengers: Number(formData.passengers),
+                special_requests: formData.specialRequests,
+                total_price: totalPrice,
+                status: 'pending'
+            });
+
+            if (error) {
+                console.error('Error submitting booking:', error);
+                alert('There was an issue submitting your booking. Please try again.');
+                return;
+            }
+
+            setIsSubmitted(true);
+        } catch (err) {
+            console.error('Unexpected error:', err);
+            alert('An unexpected error occurred. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (isSubmitted) {
