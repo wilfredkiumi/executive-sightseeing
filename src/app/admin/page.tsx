@@ -143,11 +143,23 @@ export default function AdminDashboard() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="mb-8">
-                    <h1 className="heading-primary text-3xl md:text-4xl text-executive-navy mb-2">
-                        Booking Dashboard
-                    </h1>
-                    <p className="text-gray-600">Manage and track all tour bookings</p>
+                <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h1 className="heading-primary text-3xl md:text-4xl text-executive-navy mb-2">
+                            Booking Dashboard
+                        </h1>
+                        <p className="text-gray-600">Manage and track all tour bookings</p>
+                    </div>
+                    <button
+                        onClick={() => {
+                            setLoading(true);
+                            fetchBookings();
+                        }}
+                        className="px-6 py-2 bg-executive-navy text-white rounded-lg hover:bg-opacity-90 transition-all font-medium self-start flex items-center gap-2"
+                    >
+                        <Clock className="w-4 h-4" />
+                        Refresh Data
+                    </button>
                 </div>
 
                 {/* Stats */}
@@ -183,8 +195,8 @@ export default function AdminDashboard() {
                             key={status}
                             onClick={() => setFilter(status)}
                             className={`px-4 py-2 rounded-lg font-medium transition-all ${filter === status
-                                    ? 'bg-executive-gold text-executive-navy'
-                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                ? 'bg-executive-gold text-executive-navy'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
                         >
                             {status.charAt(0).toUpperCase() + status.slice(1)}

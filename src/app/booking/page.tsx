@@ -84,16 +84,29 @@ export default function BookingPage() {
 
     if (isSubmitted) {
         return (
-            <div className="min-h-screen bg-gray-50 pt-32 pb-20 px-4 md:px-8">
-                <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-executive-gold">
-                    <h1 className="heading-primary text-3xl md:text-4xl text-executive-navy mb-4">Booking Request Received</h1>
-                    <p className="text-gray-600 text-lg mb-8">
-                        Thank you, {formData.name}. We have received your request for the <strong className="text-executive-navy">{selectedService?.name}</strong>.
-                    </p>
-                    <p className="text-gray-600 mb-8">
-                        Our concierge team will review your details and contact you shortly at {formData.email} to confirm availability and finalize arrangements.
-                    </p>
-                    <Button onClick={() => setIsSubmitted(false)}>Make Another Booking</Button>
+            <div className="min-h-screen bg-gray-50 pt-40 pb-20 px-4">
+                <div className="max-w-2xl mx-auto w-full bg-white p-8 md:p-12 rounded-xl shadow-xl text-center border-t-8 border-executive-gold animate-scale-in">
+                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h1 className="heading-primary text-3xl md:text-5xl text-executive-navy mb-6">Booking Request Received</h1>
+                    <div className="space-y-4 text-gray-600 text-lg mb-10 text-center max-w-lg mx-auto">
+                        <p>
+                            Thank you, <span className="font-bold text-executive-navy">{formData.name}</span>. We have received your request for the <strong className="text-executive-gold font-bold">{selectedService?.name}</strong>.
+                        </p>
+                        <p>
+                            Our concierge team will review your details and contact you shortly at <span className="font-medium text-executive-navy">{formData.phone}</span> or <span className="font-medium text-executive-navy">{formData.email}</span> to confirm availability and finalize arrangements.
+                        </p>
+                    </div>
+                    <Button
+                        onClick={() => setIsSubmitted(false)}
+                        className="min-w-[200px]"
+                        size="lg"
+                    >
+                        Make Another Booking
+                    </Button>
                 </div>
             </div>
         );
